@@ -1,0 +1,12 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.pages{
+    margin: 0 15%;
+}
+.footer{
+    height: 80px;
+    margin: 5px 0;
+}
