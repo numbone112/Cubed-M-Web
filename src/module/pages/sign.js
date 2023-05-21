@@ -3,7 +3,7 @@ import React from 'react';
 
 import style from "../../css/sign.module.css"
 import { trackPromise } from 'react-promise-tracker';
-import { Grid, Button, Input, Image, Select, Segment, Form,Header,Message } from 'semantic-ui-react'
+import { Grid, Button, Input, Image, Select, Segment, Form, Header, Message } from 'semantic-ui-react'
 import { sha256 } from 'js-sha256';
 
 class Base extends React.Component {
@@ -52,9 +52,9 @@ class Sign extends React.Component {
         let city = this.state.city_id
         let name = document.getElementById("name").value
         let phone = document.getElementById("phone").value
-        trackPromise(
+        // trackPromise(
 
-        )
+        // )
 
     }
     // showinfo = (msg) => {
@@ -81,16 +81,16 @@ class Sign extends React.Component {
                                 <div><Input className={style.select} type="password" placeholder="確認密碼" id="checkpsd" /></div>
 
                                 <div><Select className={style.select} id="sex" placeholder="性別" options={sexList} onChange={this.sexChange} /></div>
-                                <p class="text-gray-400 flex px-1"><span class="flex-none self-center">生日：</span><span class='flex-none'><Input className={style.birth} type="date" id="birth" /></span></p>
-                                <div class="pb-1"><Select className={style.select} id="city" placeholder="居住地" options={this.state.city} onChange={this.cityChange} /></div>
+                                <p class="text-gray-400 flex px-1"><span class="flex-none self-center">生日：</span></p>
                                 <p><Input className={style.select} type="phone" placeholder="手機號碼" id="phone" /></p>
+                                <p><span class='flex-none'><Input className={style.birth} type="date" id="birth" /></span></p>
                                 <p>{this.state.errorMes ? this.state.errorMes : ""}</p>
                             </div>
                             <p className={style.csign}>
-                                點擊「繼續註冊」即表示你同意我們的 <a href="./#/information/" target="_blank">《服務條款》</a>、
+                                點擊「註冊」即表示你同意我們的 <a href="./#/information/" target="_blank">《服務條款》</a>、
                                 <a href="./#/information/" target="_blank">《資料政策》</a>和<a href="./#/information/" target="_blank">《Cookie 政策》</a>。
                             </p>
-                            <p><Button id="continue" variant="secondary" className={style.continue} onClick={this.send} >繼續註冊</Button></p>
+                            <p><Button id="continue" variant="secondary" className={style.continue} onClick={this.send} >註冊</Button></p>
 
                             <a href="./#/login">已有帳號  &nbsp; &nbsp; <h5>登入</h5></a>
                         </Segment>
@@ -140,37 +140,37 @@ class Login extends React.Component {
     }
 }
 
-class Login2 extends React.Component{
+class Login2 extends React.Component {
 
-    render(){
-        return(<>
-        <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
-    <Grid.Column style={{ maxWidth: 450 }}>
-      <Header as='h2' color='teal' textAlign='center'>
-        <Image src='https://www.creativefabrica.com/wp-content/uploads/2021/02/25/A-Little-Smiling-Cat-Logo-Funny-Kitty-Graphics-8951643-1-1-580x386.jpg' /> Log-in to your account
-      </Header>
-      <Form size='large'>
-        <Segment stacked>
-          <Form.Input fluid icon='user' iconPosition='left' placeholder='E-mail address' />
-          <Form.Input
-            fluid
-            icon='lock'
-            iconPosition='left'
-            placeholder='Password'
-            type='password'
-          />
-<p class="text-blue-600/100">The quick brown fox...</p>
+    render() {
+        return (<>
+            <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+                <Grid.Column style={{ maxWidth: 450 }}>
+                    <Header as='h2' color='teal' textAlign='center'>
+                        <Image src='https://www.creativefabrica.com/wp-content/uploads/2021/02/25/A-Little-Smiling-Cat-Logo-Funny-Kitty-Graphics-8951643-1-1-580x386.jpg' /> Log-in to your account
+                    </Header>
+                    <Form size='large'>
+                        <Segment stacked>
+                            <Form.Input fluid icon='user' iconPosition='left' placeholder='E-mail address' />
+                            <Form.Input
+                                fluid
+                                icon='lock'
+                                iconPosition='left'
+                                placeholder='Password'
+                                type='password'
+                            />
+                            <p class="text-blue-600/100">The quick brown fox...</p>
 
-          <Button color='teal' fluid size='large'>
-            Login
-          </Button>
-        </Segment>
-      </Form>
-      <Message>
-        New to us? <a href='#'>Sign Up</a>
-      </Message>
-    </Grid.Column>
-  </Grid>
+                            <Button color='teal' fluid size='large'>
+                                Login
+                            </Button>
+                        </Segment>
+                    </Form>
+                    <Message>
+                        New to us? <a href='#'>Sign Up</a>
+                    </Message>
+                </Grid.Column>
+            </Grid>
         </>)
     }
 }
@@ -190,7 +190,7 @@ export const login = {
     }
 }
 
-export const login2={
+export const login2 = {
     routeProps: {
         path: "/login2",
         element: <Login2 />
